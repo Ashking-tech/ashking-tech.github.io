@@ -1,0 +1,112 @@
+body {
+  font-family: 'Jetbrains Mono', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  background: url('findedge.png') no-repeat center center/120%; /* Start zoomed in */
+  animation: zoomOut 5s ease-out forwards; /* Add the zoom-out animation */
+}
+
+@keyframes zoomOut {
+  from {
+    background-size: 115%; /* Start slightly zoomed in */
+  }
+  to {
+    background-size: 100%; /* End at normal size */
+  }
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  background-color: #000000;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  object-fit: cover;
+}
+
+
+
+.text-section {
+  padding: 20px;
+  flex: 1;
+  animation: fadeIn 2s ease-in-out; /* Apply the fade effect */
+}
+
+.text-section h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+
+.text-section h3 {
+  
+  color: #ffffff;
+}
+
+.text-section p {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Links Styling (Now Horizontal) */
+.links {
+  margin-top: 15px;
+  display: flex; /* Ensures horizontal alignment */
+  gap: 95px; /* Space between links */
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  font-size: 1rem;
+}
+
+.links a:hover {
+  color: #505050;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(10px); /* Optional: Add a slight slide-up effect */
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .image-section img {
+      max-width: 100%;
+  }
+
+  .links {
+      justify-content: center;
+  }
+}
