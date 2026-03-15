@@ -153,7 +153,9 @@ h2::before {
 }
 
 .project-card > a.card-link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   text-decoration: none;
   color: inherit;
   position: relative;
@@ -197,6 +199,7 @@ h2::before {
   color: var(--accent-orange);
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: auto;
 }
 
 .contact-links {
