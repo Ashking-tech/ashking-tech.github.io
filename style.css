@@ -330,11 +330,44 @@ h2 {
   grid-template-columns: 54px minmax(0, 1fr) 120px;
   gap: 18px;
   align-items: start;
-  padding: 18px 0;
+  padding: 18px 16px;
   border-top: 1px solid var(--line);
   text-decoration: none;
   color: inherit;
-  transition: background-color 180ms ease, padding-left 180ms ease, border-color 180ms ease;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.project-row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(101, 212, 255, 0.12), rgba(158, 255, 55, 0.05) 45%, transparent 78%);
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 220ms ease, transform 260ms ease;
+  pointer-events: none;
+}
+
+.project-row::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-cool), var(--accent));
+  opacity: 0;
+  transform: scaleY(0.6);
+  transform-origin: center;
+  transition: opacity 220ms ease, transform 220ms ease;
+  pointer-events: none;
 }
 
 .project-row:first-child {
@@ -343,26 +376,63 @@ h2 {
 
 .project-row:hover,
 .project-row:focus-visible {
-  padding-left: 10px;
-  background: rgba(255, 255, 255, 0.02);
-  border-color: var(--line-strong);
+  transform: translateX(8px);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(101, 212, 255, 0.28);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+}
+
+.project-row:hover::before,
+.project-row:focus-visible::before,
+.project-row:hover::after,
+.project-row:focus-visible::after {
+  opacity: 1;
+  transform: translateX(0) scaleY(1);
+}
+
+.project-row:hover .project-index,
+.project-row:focus-visible .project-index {
+  color: var(--accent);
+}
+
+.project-row:hover .project-body h3,
+.project-row:focus-visible .project-body h3 {
+  color: var(--accent-cool);
+}
+
+.project-row:hover .project-tech,
+.project-row:focus-visible .project-tech {
+  color: var(--text);
+  transform: translateX(-6px);
 }
 
 .project-body h3 {
   font-size: clamp(1.2rem, 2vw, 1.8rem);
   letter-spacing: 0.02em;
+  transition: color 220ms ease;
 }
 
 .project-body p {
   margin-top: 8px;
   color: var(--text-soft);
   max-width: 60ch;
+  transition: color 220ms ease;
+}
+
+.project-row:hover .project-body p,
+.project-row:focus-visible .project-body p {
+  color: var(--text);
 }
 
 .project-tech {
   color: var(--accent-cool);
   text-align: right;
   padding-top: 7px;
+  transition: color 220ms ease, transform 220ms ease;
+}
+
+.project-index {
+  transition: color 220ms ease;
 }
 
 .contact-panel {
