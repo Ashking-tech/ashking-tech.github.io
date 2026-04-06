@@ -7,104 +7,202 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>ashking</h1>
-      <p class="tagline">
-        <span class="typing-text" id="typewriter"></span><span class="cursor">_</span>
-      </p>
+  <div class="shell">
+    <header class="topbar">
+      <a class="wordmark" href="#home">ashking</a>
       <nav>
         <a href="#about">about</a>
-        <a href="#projects">projects</a>
+        <a href="#projects">work</a>
+        <a href="#contact">contact</a>
       </nav>
     </header>
 
-    <section id="about">
-      <h2>about</h2>
-      <p class="about-text">
-        Backend developer. Building things that work behind the scenes.
-        Currently focused on Go, networking, P2P systems, and making things scale.
-      </p>
-      <div class="tech-tags">
-        <span>Go</span>
-        <span>JavaScript</span>
-        <span>C</span>
-        <span>Networking</span>
-        <span>P2P</span>
-      </div>
-    </section>
+    <main id="home" class="layout">
+      <section class="intro">
+        <div class="intro-markers">
+          <span>backend</span>
+          <span>systems</span>
+          <span>networking</span>
+        </div>
 
-    <section id="contact">
-      <h2>contact</h2>
-      <div class="contact-links">
-        <a href="https://github.com/Ashking-tech" target="_blank">GitHub</a>
-        <span>Email : Ashking21@proton.me</span>
-        <span>Discord : .ashking</span>
-      </div>
-    </section>
+        <h1>
+          building backend
+          <span>systems that hold</span>
+          up under real use
+        </h1>
 
-    <section id="projects">
-      <h2>projects</h2>
-      <div class="projects-grid">
-        <article class="project-card">
-          <a href="https://github.com/Ashking-tech/bittorent-client-" target="_blank" class="card-link">
-            <span class="external-link">↗</span>
-            <h3>bittorent-client</h3>
-            <p>BitTorrent client implementation in JavaScript. 5 stars on GitHub.</p>
-            <span class="lang">JavaScript</span>
+        <p class="intro-copy">
+          I care about protocol behavior, reliability, and the kind of engineering decisions that still make sense after the demo.
+        </p>
+
+        <p class="tagline">
+          <span class="typing-text" id="typewriter"></span><span class="cursor">_</span>
+        </p>
+
+        <div class="cta-row">
+          <a class="primary-link" href="https://github.com/Ashking-tech" target="_blank" rel="noreferrer">github</a>
+          <a class="secondary-link" href="#projects">selected work</a>
+        </div>
+      </section>
+
+      <aside class="signal-panel">
+        <div class="panel-header">
+          <span class="panel-label">active stack</span>
+          <span class="panel-code">/2026</span>
+        </div>
+
+        <ul class="signal-list">
+          <li>Go for backend services and tooling</li>
+          <li>P2P and local-network software</li>
+          <li>C when low-level control matters</li>
+          <li>JavaScript when speed of iteration wins</li>
+        </ul>
+
+        <div class="stack-grid" aria-label="Technology stack">
+          <div class="stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" alt="Go logo" loading="lazy">
+          </div>
+          <div class="stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" loading="lazy">
+          </div>
+          <div class="stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js logo" loading="lazy">
+          </div>
+          <div class="stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" alt="Express logo" loading="lazy">
+          </div>
+          <div class="stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB logo" loading="lazy">
+          </div>
+          <div class="stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="Docker logo" loading="lazy">
+          </div>
+          <div class="stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" alt="Socket.IO logo" loading="lazy">
+          </div>
+          <div class="stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webrtc/webrtc-original.svg" alt="WebRTC logo" loading="lazy">
+          </div>
+          <div class="stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" alt="Git logo" loading="lazy">
+          </div>
+          <div class="stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C logo" loading="lazy">
+          </div>
+          <div class="stack-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" loading="lazy">
+          </div>
+        </div>
+      </aside>
+
+      <section id="about" class="panel about-panel">
+        <div class="section-meta">
+          <span>01</span>
+          <h2>about</h2>
+        </div>
+
+        <p>
+          I'm a 19-year-old second-year student focused on backend systems and infrastructure.
+        </p>
+        <p>
+          I enjoy networking, peer-to-peer systems, and tools that solve practical problems cleanly.
+        </p>
+      </section>
+
+      <section id="projects" class="panel projects-panel">
+        <div class="section-meta">
+          <span>02</span>
+          <h2>selected work</h2>
+        </div>
+
+        <div class="project-stack">
+          <a class="project-row" href="https://github.com/Ashking-tech/SSH-Honeypot" target="_blank" rel="noreferrer">
+            <span class="project-index">01</span>
+            <div class="project-body">
+              <h3>ssh-honeypot</h3>
+              <p>Production-grade SSH honeypot in Go with realistic shell emulation, credential and command logging, geo-IP enrichment, and a built-in dashboard API.</p>
+            </div>
+            <span class="project-tech">Go</span>
           </a>
-        </article>
 
-        <article class="project-card">
-          <a href="https://github.com/Ashking-tech/git-Visualise" target="_blank" class="card-link">
-            <span class="external-link">↗</span>
-            <h3>git-visualise</h3>
-            <p>Git local commits visualiser in terminal</p>
-            <span class="lang">Go</span>
+          <a class="project-row" href="https://github.com/Ashking-tech/bittorent-client-" target="_blank" rel="noreferrer">
+            <span class="project-index">02</span>
+            <div class="project-body">
+              <h3>bittorent-client</h3>
+              <p>BitTorrent client implementation in JavaScript with public traction on GitHub.</p>
+            </div>
+            <span class="project-tech">JavaScript</span>
           </a>
-        </article>
 
-        <article class="project-card">
-          <a href="https://github.com/Ashking-tech/Local-Beam" target="_blank" class="card-link">
-            <span class="external-link">↗</span>
-            <h3>local-beam</h3>
-            <p>P2P file sharing app via LAN/WLAN</p>
-            <span class="lang">JavaScript</span>
+          <a class="project-row" href="https://github.com/Ashking-tech/git-Visualise" target="_blank" rel="noreferrer">
+            <span class="project-index">03</span>
+            <div class="project-body">
+              <h3>git-visualise</h3>
+              <p>Terminal-first visualiser for understanding local Git commit history.</p>
+            </div>
+            <span class="project-tech">Go</span>
           </a>
-        </article>
 
-        <article class="project-card">
-          <a href="https://github.com/Ashking-tech/http-server-" target="_blank" class="card-link">
-            <span class="external-link">↗</span>
-            <h3>http-server</h3>
-            <p>Simple HTTP server implementation in C</p>
-            <span class="lang">C</span>
+          <a class="project-row" href="https://github.com/Ashking-tech/Local-Beam" target="_blank" rel="noreferrer">
+            <span class="project-index">04</span>
+            <div class="project-body">
+              <h3>local-beam</h3>
+              <p>Peer-to-peer file sharing over LAN and WLAN with a practical local-network focus.</p>
+            </div>
+            <span class="project-tech">JavaScript</span>
           </a>
-        </article>
 
-        <article class="project-card">
-          <a href="https://github.com/Ashking-tech/backend-deployment" target="_blank" class="card-link">
-            <span class="external-link">↗</span>
-            <h3>backend-deployment</h3>
-            <p>Backend deployment for a Hackathon</p>
-            <span class="lang">JavaScript</span>
+          <a class="project-row" href="https://github.com/Ashking-tech/http-server-" target="_blank" rel="noreferrer">
+            <span class="project-index">05</span>
+            <div class="project-body">
+              <h3>http-server</h3>
+              <p>Low-level HTTP server implementation written in C.</p>
+            </div>
+            <span class="project-tech">C</span>
           </a>
-        </article>
 
-        <article class="project-card">
-          <a href="https://github.com/Ashking-tech/QR-based-attendance" target="_blank" class="card-link">
-            <span class="external-link">↗</span>
-            <h3>qr-attendance</h3>
-            <p>QR-based attendance system</p>
-            <span class="lang">JavaScript</span>
+          <a class="project-row" href="https://github.com/Ashking-tech/backend-deployment" target="_blank" rel="noreferrer">
+            <span class="project-index">06</span>
+            <div class="project-body">
+              <h3>backend-deployment</h3>
+              <p>Hackathon backend deployment work focused on shipping under time pressure.</p>
+            </div>
+            <span class="project-tech">JavaScript</span>
           </a>
-        </article>
-      </div>
-    </section>
 
-    <footer>
-      <p>built from scratch // 2026</p>
-    </footer>
+          <a class="project-row" href="https://github.com/Ashking-tech/QR-based-attendance" target="_blank" rel="noreferrer">
+            <span class="project-index">07</span>
+            <div class="project-body">
+              <h3>qr-attendance</h3>
+              <p>Attendance system built around QR-based check-in flows.</p>
+            </div>
+            <span class="project-tech">JavaScript</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="contact" class="panel contact-panel">
+        <div class="section-meta">
+          <span>03</span>
+          <h2>contact</h2>
+        </div>
+
+        <div class="contact-grid">
+          <a href="https://github.com/Ashking-tech" target="_blank" rel="noreferrer">
+            <span class="contact-key">github</span>
+            <span class="contact-data">@Ashking-tech</span>
+          </a>
+          <div>
+            <span class="contact-key">email</span>
+            <span class="contact-data">Ashking21@proton.me</span>
+          </div>
+          <div>
+            <span class="contact-key">discord</span>
+            <span class="contact-data">.ashking</span>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
 
   <script src="script.js"></script>
