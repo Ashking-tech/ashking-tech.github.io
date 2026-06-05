@@ -14,6 +14,8 @@
   <div class="noise"></div>
   <div class="sakura-container" id="sakura"></div>
 
+  <audio id="bg-music" loop preload="metadata" src="assets/song.mp3" data-label="Bad Apple"></audio>
+
   <header class="header">
     <div class="header-banner">
       <div class="banner-image"></div>
@@ -149,9 +151,6 @@
             
             I learn by building,things i built mostly in my second year(currently).i tend to go deep on one idea until it either works or teaches me something.
         </p>
-        <p>
-            
-        </p>
       </div>
     </section>
 
@@ -163,7 +162,7 @@
       <div class="projects-grid">
         <a href="https://github.com/Ashking-tech/SSH-Honeypot" target="_blank" rel="noreferrer" class="project-card">
           <div class="project-card-img">
-            <img src="assets/ssh honeypot.png" alt="SSH Honeypot" class="project-img">
+            <img src="assets/ssh honeypot.png" alt="SSH Honeypot" class="project-img" loading="lazy">
           </div>
           <div class="project-card-body">
             <div class="project-card-header">
@@ -181,7 +180,7 @@
 
         <a href="https://github.com/Ashking-tech/bittorent-client-" target="_blank" rel="noreferrer" class="project-card">
           <div class="project-card-img">
-            <img src="assets/bittorent.png" alt="BitTorrent Client" class="project-img">
+            <img src="assets/bittorent.png" alt="BitTorrent Client" class="project-img" loading="lazy">
           </div>
           <div class="project-card-body">
             <div class="project-card-header">
@@ -199,7 +198,7 @@
 
         <a href="https://github.com/Ashking-tech/git-Visualise" target="_blank" rel="noreferrer" class="project-card">
           <div class="project-card-img">
-            <img src="assets/git-visualise.png" alt="Git Visualise" class="project-img">
+            <img src="assets/git-visualise.png" alt="Git Visualise" class="project-img" loading="lazy">
           </div>
           <div class="project-card-body">
             <div class="project-card-header">
@@ -289,6 +288,16 @@
         <iframe src="assets/Ashking_CV_Jake_Style.pdf" class="pdf-viewer"></iframe>
       </div>
     </div>
+  </div>
+
+  <div id="music-controls">
+    <button id="music-toggle" class="paused" aria-label="Toggle background music">
+      <span class="disc-ring"></span>
+      <span class="disc-body">
+        <span class="disc-star">✦</span>
+      </span>
+    </button>
+    <span id="music-label"></span>
   </div>
 
   <script src="script.js"></script>

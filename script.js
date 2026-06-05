@@ -77,4 +77,47 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
   });
+
+  const audio = document.getElementById('bg-music');
+  const toggle = document.getElementById('music-toggle');
+  const controls = document.getElementById('music-controls');
+  const label = document.getElementById('music-label');
+  let started = false;
+
+  if (audio.dataset.label) {
+    label.textContent = 'playing ' + audio.dataset.label;
+  }
+
+  function setPlaying() {
+    toggle.classList.remove('paused');
+    toggle.classList.add('playing');
+    controls.classList.add('playing');
+    started = true;
+  }
+
+  function setPaused() {
+    toggle.classList.remove('playing');
+    toggle.classList.add('paused');
+    controls.classList.remove('playing');
+  }
+
+  function attemptPlay() {
+    audio.play().then(setPlaying).catch(() => {});
+  }
+
+  attemptPlay();
+
+  document.addEventListener('click', () => {
+    if (!started) attemptPlay();
+  }, { once: true });
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (audio.paused) {
+      audio.play().then(setPlaying).catch(() => {});
+    } else {
+      audio.pause();
+      setPaused();
+    }
+  });
 });
