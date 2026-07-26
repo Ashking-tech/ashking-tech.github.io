@@ -27,27 +27,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const sakuraContainer = document.getElementById('sakura');
-  const petalCount = 20;
-  for (let i = 0; i < petalCount; i++) {
-    const petal = document.createElement('span');
-    petal.className = 'petal';
-    const size = 8 + Math.random() * 12;
-    const left = Math.random() * 100;
-    const delay = Math.random() * 15;
-    const duration = 8 + Math.random() * 12;
-    const hueShift = Math.random() * 30 - 15;
-    petal.style.cssText = `
-      left: ${left}%;
-      width: ${size}px;
-      height: ${size * 0.7}px;
-      animation-duration: ${duration}s;
-      animation-delay: ${delay}s;
-      filter: blur(${0.5 + Math.random() * 2}px) hue-rotate(${hueShift}deg);
-      opacity: ${0.1 + Math.random() * 0.2};
-    `;
-    sakuraContainer.appendChild(petal);
-  }
+  fetch('https://api.github.com/users/Ashking-tech')
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById('gh-repos').textContent = data.public_repos;
+      document.getElementById('gh-followers').textContent = data.followers;
+    });
+  fetch('https://api.github.com/users/Ashking-tech/repos?per_page=100')
+    .then(r => r.json())
+    .then(data => {
+      if (Array.isArray(data))
+        document.getElementById('gh-stars').textContent = data.reduce((s, r) => s + r.stargazers_count, 0);
+    });
+
+  document.getElementById('copy-email').addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText('Ashking21@proton.me').then(() => {
+      const btn = e.currentTarget;
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+      setTimeout(() => {
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>';
+      }, 1500);
+    });
+  });
 
   const modal = document.getElementById('resume-modal');
   const trigger = document.getElementById('resume-trigger');
